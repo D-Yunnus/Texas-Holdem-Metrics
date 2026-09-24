@@ -37,9 +37,9 @@ enum Ranks : uint16_t
 enum Suits : uint16_t
 {
     SPADES = 0,
-    CLUBS,
-    DIAMONDS,
     HEARTS,
+    DIAMONDS,
+    CLUBS,
 };
 
 struct HandInfo

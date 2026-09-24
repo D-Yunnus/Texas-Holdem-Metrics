@@ -73,13 +73,13 @@ namespace helper
             std::cout << "SPADES\n";
             break;
         case 0x4000:
-            std::cout << "CLUBS\n";
+            std::cout << "HEARTS\n";
             break;
         case 0x8000:
             std::cout << "DIAMONDS\n";
             break;
         case 0x10000:
-            std::cout << "HEARTS\n";
+            std::cout << "CLUBS\n";
             break;
         }
     }
@@ -96,6 +96,22 @@ namespace helper
         std::copy(second.begin(), second.end(), result.begin() + A);
 
         return result;
+    }
+
+    constexpr int binCoeff(int N, int K)
+    {
+        if (K > N) return 0;
+        if (K == 0 || K == N) return 1;
+
+        int k = (K > N / 2) ? (N - K) : K;
+
+        int res = 1;
+        for (int i = 1; i <= k; ++i)
+        {
+            res = res * (N - k + i) / i;
+        }
+
+        return res;
     }
 }
 
